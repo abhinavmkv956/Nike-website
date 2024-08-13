@@ -48,12 +48,22 @@ const Card2: FC<Card2Props> = () => {
             <h4>Featured</h4>
           </Col>
           <Col xs={6} sm={3} md={2} className='d-flex justify-content-end gap-2'>
-            <Button variant="secondary" className="rounded-circle btn-lg" onClick={() => scroll('left')}>
-              <IoChevronBackOutline />
-            </Button>
-            <Button variant="secondary" className="rounded-circle btn-lg" onClick={() => scroll('right')}>
-              <IoChevronForwardOutline />
-            </Button>
+          <button
+              type="button"
+              className="btn btn-secondary rounded-circle  d-flex align-items-center justify-content-center"
+              style={{ width: '3rem', height: '3rem' }}
+              onClick={() => scroll('left')}
+            >
+              <IoChevronBackOutline size="1.5rem" />
+            </button>
+            <button
+              type="button"
+              className="btn btn-secondary rounded-circle  d-flex align-items-center justify-content-center"
+              style={{ width: '3rem', height: '3rem' }}
+              onClick={() => scroll('right')}
+            >
+              <IoChevronForwardOutline size="1.5rem" />
+            </button>
           </Col>
         </Row>
         <div
@@ -63,11 +73,11 @@ const Card2: FC<Card2Props> = () => {
         >
           {card2Data.map((card, index) => (
             <Card key={index} className='border-0' style={{flex: '0 0 70%', maxWidth: '30rem' }}>
-              <Card.Img variant="top" src={card.src} />
-              <Card.Body>
-                <Card.Text>{card.title}</Card.Text>
-                <Card.Text>
-                  <h5>{card.text}</h5><br />
+              <Card.Img style={{borderRadius:'0'}} variant="top" src={card.src} />
+              <Card.Body  className='ps-0 pt-5'>
+                <Card.Text className='pb-0'>{card.title}</Card.Text>
+                <Card.Text >
+                  <h5 >{card.text}</h5><br />
                   <b><a className="text-decoration-none text-dark" href="#">Shop</a></b>
                 </Card.Text>
               </Card.Body>

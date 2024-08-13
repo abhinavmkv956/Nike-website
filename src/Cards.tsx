@@ -72,21 +72,23 @@ const Cards: FC<CardsProps> = ({}) => {
     <>
       <Container className='mt-5 pt-5'>
         <Row className='mb-3 align-items-center'>
-          <Col xs={6} sm={9}><h4>Popular Right Now</h4></Col>
-          <Col xs={6} sm={3} className='d-flex justify-content-end gap-3'>
+          <Col xs={7} sm={9}><h4>Popular Right Now</h4></Col>
+          <Col xs={5} sm={3} className='d-flex justify-content-end gap-2'>
             <button
               type="button"
-              className="btn btn-secondary btn-lg rounded-circle"
+              className="btn btn-secondary rounded-circle  d-flex align-items-center justify-content-center"
+              style={{ width: '3rem', height: '3rem' }}
               onClick={() => scroll('left')}
             >
-              <IoChevronBackOutline />
+              <IoChevronBackOutline size="1.5rem" />
             </button>
             <button
               type="button"
-              className="btn btn-secondary btn-lg rounded-circle"
+              className="btn btn-secondary rounded-circle  d-flex align-items-center justify-content-center"
+              style={{ width: '3rem', height: '3rem' }}
               onClick={() => scroll('right')}
             >
-              <IoChevronForwardOutline />
+              <IoChevronForwardOutline size="1.5rem" />
             </button>
           </Col>
         </Row>
@@ -96,13 +98,13 @@ const Cards: FC<CardsProps> = ({}) => {
           className='d-flex gap-3 flex-nowrap overflow-x-scroll'
         >
           {cardData.map((card, index) => (
-            <Card key={index} className='border-0' style={{ flex: '0 0 70%', maxWidth: '30rem' }}>
-              <Card.Img variant="top" src={card.src} />
-              <Card.Body>
+            <Card key={index} className='border-0   ' style={{ flex: '0 0 70%', maxWidth: '30rem'}}>
+              <Card.Img style={{borderRadius:'0'}} variant="top" src={card.src} />
+              <Card.Body className='ps-0 pt-3'>
                 <Card.Title>{card.title}</Card.Title>
                 <Card.Text>
                   {card.text}<br />
-                  <b>MRP: {card.price}</b>
+                  <b >MRP: {card.price}</b>
                 </Card.Text>
               </Card.Body>
             </Card>

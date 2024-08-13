@@ -54,21 +54,23 @@ const Lcard: FC<LcardProps> = () => {
         <Col xs={10}>
           <h4>Featured</h4>
         </Col>
-        <Col xs={2} className='d-flex justify-content-end'>
-          <button
-            type="button"
-            className="btn btn-secondary btn-lg rounded-circle me-2"
-            onClick={() => scroll('left')}
-          >
-            <IoChevronBackOutline />
-          </button>
-          <button
-            type="button"
-            className="btn btn-secondary btn-lg rounded-circle"
-            onClick={() => scroll('right')}
-          >
-            <IoChevronForwardOutline />
-          </button>
+        <Col xs={2} className='d-flex justify-content-end gap-2'>
+        <button
+              type="button"
+              className="btn btn-secondary rounded-circle  d-flex align-items-center justify-content-center"
+              style={{ width: '3rem', height: '3rem' }}
+              onClick={() => scroll('left')}
+            >
+              <IoChevronBackOutline size="1.5rem" />
+            </button>
+            <button
+              type="button"
+              className="btn btn-secondary rounded-circle  d-flex align-items-center justify-content-center"
+              style={{ width: '3rem', height: '3rem' }}
+              onClick={() => scroll('right')}
+            >
+              <IoChevronForwardOutline size="1.5rem" />
+            </button>
         </Col>
       </Row>
       <div
@@ -78,8 +80,8 @@ const Lcard: FC<LcardProps> = () => {
       >
         {card2Data.map((card, index) => (
           <Card key={index} className='border-0' style={{ flex: '0 0 70%', maxWidth: '30rem' }}>
-            <Card.Img variant="top" src={card.src} />
-            <Card.ImgOverlay className='d-flex align-items-end p-3'>
+            <Card.Img style={{borderRadius:'0'}} variant="top" src={card.src} />
+            <Card.ImgOverlay className='d-flex align-items-end p-5'>
               <div className='text-light'>
                 <Card.Text className='fw-bold'>{card.title}</Card.Text>
                 <Card.Text>
